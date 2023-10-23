@@ -6,7 +6,7 @@
 
   {{ govukBackLink({
     text: "Back",
-    href: "/new"
+    href: "javascript:window.history.back()"
   }) }}
 
 {% endblock %}
@@ -17,7 +17,7 @@
   <div class="govuk-grid-column-two-thirds">
 
 
-    <form novalidate>
+    <form novalidate method="post">
 
       {{ govukInput({
         id: "[new][emailAddress]",
