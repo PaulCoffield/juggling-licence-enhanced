@@ -25,12 +25,14 @@ router.post('/new/country', (req,res) =>{
 
 router.post('/new/juggling-balls', (req,res) =>{
 
-    
-
     if(req.body.new.numberOfBalls == 'none - I cannot juggle'){
         res.redirect('/new/not-eligible');
     }else{
         res.redirect('/new/juggling-trick');
     }
 
+})
+
+router.post('/new/juggling-trick', (req,res) =>{
+    res.redirect('/new/juggling-objects');
 })
