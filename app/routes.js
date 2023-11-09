@@ -1,6 +1,6 @@
 //
-// For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
+// For guidance on how to create routes see:
 //
 
 const govukPrototypeKit = require('govuk-prototype-kit')
@@ -21,4 +21,16 @@ router.post('/new/name', (req,res) =>{
 
 router.post('/new/country', (req,res) =>{
     res.redirect('/new/juggling-balls');
+})
+
+router.post('/new/juggling-balls', (req,res) =>{
+
+    
+
+    if(req.body.new.numberOfBalls == 'none - I cannot juggle'){
+        res.redirect('/new/not-eligible');
+    }else{
+        res.redirect('/new/juggling-trick');
+    }
+
 })
