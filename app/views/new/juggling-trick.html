@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = "PLACEHOLDER" %}
+{% set pageName = "What is your most impressive juggling trick?" %}
 
 {% block beforeContent %}
 
@@ -19,6 +19,19 @@
    
     <form novalidate method="post">
 
+      
+
+      {{ govukCharacterCount({
+        name: "[new][trick]]",
+        id: "[new][trick]]",
+        label: {
+          text: pageName,
+          isPageHeading: true,
+          classes: "govuk-label--l"
+        },
+        maxwords: 100,
+        value: data.new.trick
+      }) }}
    
 
      {{ govukButton({
