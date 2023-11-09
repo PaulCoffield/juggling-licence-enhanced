@@ -8,19 +8,36 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 
 router.post('/new/email-address', (req, res) => {
-    res.redirect('/new/code');
+     if(req.query.returnUrl){
+        res.redirect(req.query.returnUrl);
+    }else{
+        res.redirect('/new/code');
+    }
 })
 
 router.post('/new/code', (req, res) => {
-    res.redirect('/new/name');
+
+    if(req.query.returnUrl){
+        res.redirect(req.query.returnUrl);
+    }else{
+        res.redirect('/new/name');
+    }
 })
 
 router.post('/new/name', (req,res) =>{
-    res.redirect('/new/country');
+    if(req.query.returnUrl){
+        res.redirect(req.query.returnUrl);
+    }else{
+        res.redirect('/new/country');
+    }
 })
 
 router.post('/new/country', (req,res) =>{
-    res.redirect('/new/juggling-balls');
+    if(req.query.returnUrl){
+        res.redirect(req.query.returnUrl);
+    }else{
+        res.redirect('/new/juggling-balls');
+    }
 })
 
 router.post('/new/juggling-balls', (req,res) =>{
@@ -28,13 +45,21 @@ router.post('/new/juggling-balls', (req,res) =>{
     if(req.body.new.numberOfBalls == 'none - I cannot juggle'){
         res.redirect('/new/not-eligible');
     }else{
-        res.redirect('/new/juggling-trick');
+        if(req.query.returnUrl){
+            res.redirect(req.query.returnUrl);
+        }else{
+            res.redirect('/new/juggling-trick');
+        }
     }
 
 })
 
 router.post('/new/juggling-trick', (req,res) =>{
-    res.redirect('/new/juggling-objects');
+    if(req.query.returnUrl){
+        res.redirect(req.query.returnUrl);
+    }else{
+        res.redirect('/new/juggling-objects');
+    }
 })
 
 router.post('/new/juggling-objects', (req,res) =>{
