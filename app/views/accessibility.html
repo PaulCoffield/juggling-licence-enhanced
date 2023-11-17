@@ -2,36 +2,37 @@
 
 {% set pageName="Accessibility statement" %}
 
+{% set AccessibilityContent %}
+
+# {{pageName}}
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt iste ipsam expedita ratione rerum voluptatem perferendis qui temporibus. Ab, odio?
+
+## Level 2 heading
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+
+### Level 3 heading
+
+  1. Point 1
+  2. Point 2
+  3. Point 3
+
+{% endset %}
+
 {% block content %}
+
+
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">{{ pageName }}</h1>
     
+ 
 
-
-    <p>The GOV.UK Design System team at the Government Digital Service (GDS) maintains the following products:</p>
-
-    <ul class="govuk-list">
-      <li>
-        GOV.UK Design System website
-      </li>
-      <li>
-        GOV.UK Frontend documentation website
-      </li>
-      <li>
-        GOV.UK Frontend codebase
-      </li>
-    </ul>
-
-    <p>
-      This page explains how the team works to ensure these products are accessible.
-     
-    </p>
-
-
-
+    {{AccessibilityContent | govukMarkdown(headingsStartWith="l")}}
   
   </div>
 </div>
