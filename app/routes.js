@@ -69,3 +69,19 @@ router.post('/new/juggling-objects', (req,res) =>{
 router.post('/new/check', (req,res) =>{
     res.redirect('/new/confirmation');
 })
+
+
+
+
+// Logging session data 
+ 
+router.use((req, res, next) => { 
+    const log = { 
+    method: req.method, 
+    url: req.originalUrl, 
+    data: req.session.data 
+    } 
+    console.log(JSON.stringify(log, null, 2)) 
+   
+    next() 
+    })
